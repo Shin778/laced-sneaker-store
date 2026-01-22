@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laced | Shop</title>
+    <meta
+      name="description"
+      content="Browse our full catalog of authentic sneakers. Filter by brand and price. Find the latest drops and exclusive releases ready to ship."
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 antialiased flex flex-col min-h-screen transition-colors duration-300"
+  >
+    <div id="app-navbar"></div>
+
+    <main class="pt-20 flex-1">
+      <section
+        class="animate-slide-up max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-10"
+        >
+          <h1
+            class="text-4xl text-gray-900 dark:text-gray-50 font-black mb-4 md:mb-0"
+          >
+            CATALOG
+          </h1>
+
+          <div class="flex gap-4">
+            <select
+              onchange="updateFilter('brand', this.value)"
+              class="text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer transition-colors"
+            >
+              <option value="All" selected="">All Brands</option>
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
+              <option value="New Balance">New Balance</option>
+            </select>
+
+            <select
+              onchange="updateFilter('sort', this.value)"
+              class="text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer transition-colors"
+            >
+              <option value="default" selected="">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          id="catalog-container"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        ></div>
+      </section>
+    </main>
+
+    <div id="app-footer"></div>
+  </body>
+</html>
